@@ -1,0 +1,221 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Master_Admin.master.cs" Inherits="Web_Master_Admin" %>
+
+<!DOCTYPE html>
+<html>
+
+<head runat="server">
+    <title>Beauty Style System</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A fully featured admin theme which can be used to build CRM, CMS, etc.">
+    <meta name="author" content="Coderthemes">
+
+    <link rel="shortcut icon" href="/images/favicon_1.ico">
+
+
+
+    <!--Morris Chart CSS -->
+    <link rel="stylesheet" href="plugins/morris/morris.css" />
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <link href="css/core.css" rel="stylesheet" />
+    <link href="css/components.css" rel="stylesheet" />
+    <link href="css/icons.css" rel="stylesheet" />
+    <link href="css/pages.css" rel="stylesheet" />
+    <link href="css/responsive.css" rel="stylesheet" />
+    <%--<link href="css/font-awesome.css" rel="stylesheet" />
+    <link href="css/font-awesome.min.css" rel="stylesheet" />--%>
+    <script src='<%=ResolveUrl("~/Web/js/modernizr.min.js")%>'></script>
+    <!-- HTML5 Shiv and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+
+
+<body class="fixed-left">
+
+    <!-- Começo da página -->
+    <div id="wrapper">
+
+        <!--  -->
+        <header>
+            <div class="topbar">
+
+                <!-- LOGO -->
+                <div class="topbar-left">
+                    <div class="text-center">
+                        <a href="../Paginas/PaginaInicial.aspx" class="logo"><small>Beauty Style System</small></a>
+                    </div>
+                </div>
+
+                <!-- Button mobile view to collapse sidebar menu -->
+                <div class="navbar navbar-default" role="navigation">
+                    <div class="container">
+                        <div class="">
+                            <div class="pull-left">
+                                <button class="button-menu-mobile open-left">
+                                    <i class="ion-navicon"></i>
+                                </button>
+                                <span class="clearfix"></span>
+                            </div>
+
+                            <form role="search" class="navbar-left app-search pull-left hidden-xs">
+                                <input type="text" placeholder="Pesquisar..." class="form-control">
+                                <a href="#"><i class="fa fa-search"></i></a>
+                            </form>
+
+                            <%--Começo do Menu de Saída--%>
+                            <ul class="nav navbar-nav navbar-right pull-right">
+                                <li class="hidden-xs">
+                                    <a href="#" id="btn-fullscreen" class="waves-effect waves-light"><i class="icon-size-fullscreen"></i></a>
+                                </li>
+                                <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle profile" data-toggle="dropdown" aria-expanded="true">
+                                        <img src="../Web/images/users/avatar-1.jpg" alt="Imagem do Usuário" class="img-circle">
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="javascript:void(0)"><i class="ti-user m-r-5"></i>Configurações Pessoais</a></li>
+                                        <li><a href="javascript:void(0)"><i class="ti-settings m-r-5"></i>Configurações do Salão</a></li>
+                                        <li><a href="javascript:void(0)"><i class="ti-power-off m-r-5"></i>Sair</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                        <!--/.nav-collapse -->
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!--  -->
+
+
+        <!-- ========== Começo do Menu ========== -->
+
+        <div class="left side-menu">
+            <div class="sidebar-inner slimscrollleft">
+                <!--- Divisões -->
+                <div id="sidebar-menu">
+                    <ul>
+
+                        <li class="text-muted menu-title">Navegação</li>
+
+                        <li class="has_sub">
+                            <a href="../Paginas/Index.aspx" class="waves-effect active"><i class="ti-home"></i><span>Página Inicial</span></a>
+                        </li>
+
+                        <li class="has_sub">
+                            <a href="#" class="waves-effect"><i class="ti-user"></i><span>Pessoas</span></a>
+                            <ul class="list-unstyled">
+                                <li><a href="#">Usuários</a></li>
+                                <li><a href="#">Fornecedores</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="has_sub">
+                            <a href="#" class="waves-effect"><i class="ti-shopping-cart"></i><span>Estoque</span></a>
+                            <ul class="list-unstyled">
+                                <li><a href="#">Equipamentos</a></li>
+                                <li><a href="#">Produtos</a></li>
+                            </ul>
+                        </li>
+                        <li class="has_sub">
+                            <a href="#" class="waves-effect"><i class="ti-cut"></i><span>Serviços</span></a>
+                        </li>
+                        <li class="has_sub">
+                            <a href="#" class="waves-effect"><i class="ti-pencil-alt"></i><span>Lançamentos</span></a>
+                        </li>
+                        <li class="has_sub">
+                            <a href="#" class="waves-effect"><i class="ti-search"></i><span>Consultas</span></a>
+                            <ul class="list-unstyled">
+                                <li><a href="#">Usuário</a></li>
+                                <li><a href="#">Fornecedor</a></li>
+                                <li><a href="#">Produto</a></li>
+                                <li><a href="#">Equipamento</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="has_sub">
+                            <a href="#" class="waves-effect"><i class="ti-printer"></i><span>Relatórios </span></a>
+                        </li>
+                    </ul>
+
+                </div>
+            </div>
+        </div>
+        <!-- Fim do Menu -->
+
+
+
+        <!-- ============================================================== -->
+        <!-- Start right Content here -->
+        <!-- ============================================================== -->
+        <div class="content-page">
+            <!-- Start content -->
+            <div class="content">
+                <div class="container">
+
+                    <!-- Page-Title -->                    
+                    <form id="form1" runat="server">
+                        <div>
+                            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server"></asp:ContentPlaceHolder>
+                        </div>
+                    </form>
+                </div>
+                <!-- container -->
+
+            </div>
+            <!-- content -->
+
+
+            <footer class="footer text-right">
+                2016 Beauty Style System - 4º ADS.
+            </footer>
+        </div>
+    </div>
+
+    <script>
+        var resizefunc = [];
+    </script>
+
+    <!-- jQuery  -->
+
+    <script src='<%=ResolveUrl("~/Web/js/jquery.min.js")%>'></script>
+    <script src='<%=ResolveUrl("~/Web/js/bootstrap.min.js")%>'></script>
+    <script src='<%=ResolveUrl("~/Web/js/detect.js")%>'></script>
+    <script src='<%=ResolveUrl("~/Web/js/fastclick.js")%>'></script>
+    <script src='<%=ResolveUrl("~/Web/js/jquery.slimscroll.js")%>'></script>
+    <script src='<%=ResolveUrl("~/Web/js/jquery.blockUI.js")%>'></script>
+    <script src='<%=ResolveUrl("~/Web/js/waves.js")%>'></script>
+    <script src='<%=ResolveUrl("~/Web/js/wow.min.js")%>'></script>
+    <script src='<%=ResolveUrl("~/Web/js/jquery.nicescroll.js")%>'></script>
+    <script src='<%=ResolveUrl("~/Web/js/jquery.scrollTo.min.js")%>'></script>
+    <script src='<%=ResolveUrl("~/Web/plugins/peity/jquery.peity.min.js")%>'></script>
+    <!-- jQuery  -->
+    <script src='<%=ResolveUrl("~/Web/plugins/waypoints/lib/jquery.waypoints.js")%>'></script>
+    <script src='<%=ResolveUrl("~/Web/plugins/counterup/jquery.counterup.min.js")%>'></script>
+    <script src='<%=ResolveUrl("~/Web/plugins/morris/morris.min.js")%>'></script>
+    <script src='<%=ResolveUrl("~/Web/plugins/raphael/raphael-min.js")%>'></script>
+    <script src='<%=ResolveUrl("~/Web/plugins/jquery-knob/jquery.knob.js")%>'></script>
+    <script src='<%=ResolveUrl("~/Web/pages/jquery.dashboard.js")%>'></script>
+    <script src='<%=ResolveUrl("~/Web/js/jquery.core.js")%>'></script>
+    <script src='<%=ResolveUrl("~/Web/js/jquery.app.js")%>'></script>
+
+
+    <script type="text/javascript">
+        jQuery(document).ready(function ($) {
+            $('.counter').counterUp({
+                delay: 100,
+                time: 1200
+            });
+
+            $(".knob").knob();
+
+        });
+    </script>
+</body>
+</html>
